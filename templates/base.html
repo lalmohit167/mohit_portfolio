@@ -1,0 +1,1136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- THIS LINE IS MOST IMPORTANT -->
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+
+    <title>Mohit Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+
+<body class="bg-gray-900 text-white">
+
+<nav id="navbar" class="fixed top-0 w-full z-50 
+    bg-white/5 
+    backdrop-blur-xl 
+    border-b border-white/10 
+    transition-all duration-300">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <h1 class="text-xl font-bold text-white">Mohit Lal</h1>
+
+        <div class="hidden md:flex gap-6 text-gray-300">
+
+            <a href="#home" class="nav-link relative hover:text-purple-400 transition">Home</a>
+            <a href="#about" class="nav-link relative hover:text-purple-400 transition">About</a>
+            <a href="#projects" class="nav-link relative hover:text-purple-400 transition">Projects</a>
+            <a href="#skills" class="nav-link relative hover:text-purple-400 transition">Skills</a>
+            <a href="#certifications" class="nav-link relative hover:text-purple-400 transition">Certifications</a>
+            <a href="#education" class="nav-link relative hover:text-purple-400 transition">Education</a>
+            <a href="#contact" class="nav-link relative hover:text-purple-400 transition">Contact</a>
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+
+    <!-- Cursor Glow -->
+    <div id="cursor-glow"></div>
+
+    <!-- Background -->
+    <div class="absolute inset-0 
+        bg-[radial-gradient(circle_at_20%_20%,rgba(168,85,247,0.25),transparent_40%),
+            radial-gradient(circle_at_80%_30%,rgba(232,121,249,0.2),transparent_40%),
+            linear-gradient(135deg,#0b001a,#140033,#1f003d)]">
+    </div>
+
+    <!-- Glow Blobs -->
+    <div class="absolute top-32 left-20 w-80 h-80 bg-purple-500 opacity-20 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-32 right-20 w-80 h-80 bg-fuchsia-500 opacity-20 blur-3xl rounded-full"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 max-w-4xl">
+
+        <!-- Intro -->
+        <p class="text-purple-300 text-xl mb-4">
+            Hello, I'm
+        </p>
+
+        <!-- Name -->
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 
+                   bg-gradient-to-r from-purple-400 via-fuchsia-400 to-indigo-400 
+                   text-transparent bg-clip-text 
+                   drop-shadow-[0_0_6px_rgba(168,85,247,0.2)]">
+            Mohit Lal
+        </h1>
+
+        <!-- Typing -->
+        <h2 class="text-2xl md:text-3xl text-purple-200 mb-6">
+            <span id="typing"></span>
+        </h2>
+
+        <!-- Description -->
+        <p class="text-purple-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+            I transform raw data into meaningful insights and build data-driven solutions 
+            that help businesses make smarter decisions.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-4 flex-wrap">
+
+            <a href="#projects"
+               class="bg-gradient-to-r from-purple-500 to-fuchsia-400 
+                      px-8 py-3 rounded-lg text-white font-medium
+                      hover:scale-105 hover:shadow-xl hover:shadow-purple-500/40 
+                      transition duration-300">
+                View Projects
+            </a>
+
+            <a href="#contact"
+               class="border border-purple-400 px-8 py-3 rounded-lg text-purple-300 
+                      hover:bg-purple-500 hover:text-white 
+                      transition duration-300">
+                Contact Me
+            </a>
+
+            <a href="{% static 'resume.pdf' %}" download
+               class="bg-purple-900 px-8 py-3 rounded-lg text-white 
+                      hover:bg-purple-700 hover:scale-105 transition duration-300">
+                Download CV
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <div class="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center">
+            <div class="w-1 h-3 bg-purple-300 mt-2 animate-bounce rounded"></div>
+        </div>
+    </div>
+
+</section>
+
+<!-- JS -->
+<script>
+const glow = document.getElementById("cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+});
+</script>
+
+<!--ABOUT ME-->
+{% load static %}
+
+<section id="about" class="py-28 relative overflow-hidden">
+
+    <!-- Background -->
+    <div class="absolute inset-0 
+        bg-[radial-gradient(circle_at_20%_30%,rgba(168,85,247,0.18),transparent_50%),
+            radial-gradient(circle_at_80%_70%,rgba(232,121,249,0.15),transparent_50%),
+            linear-gradient(135deg,#050014,#0a001f,#140033)]">
+    </div>
+
+    <div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- LEFT -->
+            <div class="reveal-left">
+
+                <h2 class="text-5xl font-bold mb-6 
+                           bg-gradient-to-r from-purple-400 via-fuchsia-400 to-purple-500 
+                           text-transparent bg-clip-text 
+                           drop-shadow-[0_0_6px_rgba(168,85,247,0.2)]">
+                    About Me
+                </h2>
+
+                <div class="w-16 h-[3px] 
+                            bg-gradient-to-r from-purple-500 to-fuchsia-400 
+                            mb-6 rounded-full shadow-lg shadow-purple-500/40">
+                </div>
+
+                <p class="text-gray-300 text-lg leading-relaxed max-w-xl">
+                    I’m Mohit Lal, a Computer Science student focused on data analysis and real-world problem solving. 
+                    I work with SQL, Python, and Power BI to transform raw data into meaningful insights. 
+                    Through projects like Pizza Sales Analysis, a Retail Sales Dashboard, and an AI-powered Symptom Journal, 
+                    I’ve developed strong analytical thinking and hands-on experience in building impactful solutions. 
+                    I’m continuously improving my skills and aiming to contribute effectively in data-driven environments.
+                </p>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="flex justify-center md:justify-end mt-16 md:mt-24 reveal-right">
+
+                <div class="relative group">
+
+                    <div class="absolute -inset-4 
+                                bg-gradient-to-r from-purple-500 via-fuchsia-400 to-purple-600 
+                                rounded-3xl blur-2xl opacity-25 
+                                group-hover:opacity-40 transition duration-300">
+                    </div>
+
+                    <img src="{% static 'images/Mohit.png' %}" 
+                         alt="Mohit"
+                         class="relative w-80 md:w-96 object-cover 
+                                rounded-3xl 
+                                border border-purple-500/30 
+                                shadow-2xl 
+                                transition duration-300">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 relative overflow-hidden">
+
+  <!-- Background -->
+  <div class="absolute inset-0 
+      bg-[radial-gradient(circle_at_30%_20%,rgba(192,132,252,0.18),transparent_50%),
+          radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.12),transparent_50%),
+          linear-gradient(135deg,#030014,#09001f,#1a0033)]">
+  </div>
+
+  <div class="absolute inset-0 bg-black/25 backdrop-blur-[2px]"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <div class="flex items-center justify-between mb-12">
+
+      <h2 class="text-4xl font-bold reveal-left
+           bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 
+           bg-clip-text text-transparent">
+        Projects
+      </h2>
+
+      <a href="#contact"
+         class="text-sm text-purple-300 hover:text-white transition reveal-right">
+        Open to Work →
+      </a>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {% for project in projects %}
+
+      <div class="group reveal-card rounded-2xl overflow-hidden 
+                  border border-purple-500/20 
+                  bg-white/5 backdrop-blur-xl
+                  transition duration-300 hover:-translate-y-2 hover:border-purple-400 hover:shadow-xl hover:shadow-purple-500/20">
+
+        {% if project.image %}
+        <div class="overflow-hidden">
+          <img src="{{ project.image.url }}"
+               class="w-full h-48 object-cover transition duration-300 group-hover:scale-105">
+        </div>
+        {% endif %}
+
+        <div class="p-5">
+
+          <h3 class="text-xl font-semibold mb-2 
+                     group-hover:text-purple-300 transition">
+            {{ project.title }}
+          </h3>
+
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            {{ project.description }}
+          </p>
+
+          <!-- Tech -->
+          <p class="text-sm mb-4">
+            {% for tech in project.tech_list %}
+              <span class="text-purple-300">{{ tech }}</span>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex gap-3">
+
+            <button 
+              onclick="openModal('{{ project.title|escapejs }}','{{ project.description|escapejs }}','{{ project.image.url }}','{{ project.link }}')"
+              class="flex-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 
+                     px-3 py-2 rounded text-sm text-white
+                     hover:scale-105 hover:shadow-lg hover:shadow-purple-500/40 transition">
+              View Details
+            </button>
+
+            <a href="{{ project.link }}" target="_blank"
+               class="flex-1 text-center border border-purple-400/30 px-3 py-2 rounded text-sm text-purple-300
+                      hover:bg-purple-500 hover:text-white transition">
+              Live Demo
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+<div id="projectModal" class="fixed inset-0 bg-black/70 hidden flex items-center justify-center z-50">
+
+  <div class="bg-[#0a001f] border border-purple-500/30 rounded-xl max-w-xl w-full p-6 relative backdrop-blur-xl">
+
+    <button onclick="closeModal()" 
+            class="absolute top-3 right-4 text-purple-300 hover:text-white text-xl">
+      ×
+    </button>
+
+    <img id="modalImage" class="w-full h-52 object-cover rounded mb-4">
+
+    <h3 id="modalTitle" class="text-xl font-semibold font-[Poppins] mb-2 text-purple-200"></h3>
+
+    <p id="modalDesc" class="text-gray-300 mb-4 font-[Inter]"></p>
+
+    <a id="modalLink" target="_blank"
+       class="inline-block bg-gradient-to-r from-purple-500 to-fuchsia-500 px-4 py-2 rounded font-[Inter] text-white hover:scale-105 transition">
+       Live Demo →
+    </a>
+
+  </div>
+</div>
+
+<!--SKILLS-->
+<section id="skills" class="py-28 pb-32 relative overflow-hidden">
+<h2 class="reveal-left"></h2>
+  <!-- Background -->
+  <div class="absolute inset-0 
+      bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.12),transparent_50%),
+          radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.10),transparent_50%),
+          linear-gradient(135deg,#060016,#0d0026,#1a0033)]">
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-14">
+
+      <h2 class="text-4xl font-bold font-[Poppins] 
+          bg-gradient-to-r from-purple-400 via-fuchsia-400 to-indigo-400 
+          bg-clip-text text-transparent 
+          drop-shadow-[0_0_6px_rgba(168,85,247,0.2)]">
+        Skills
+      </h2>
+
+      <span class="text-sm text-purple-300 font-[Inter]">
+        Core tools & technologies
+      </span>
+
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Programming -->
+      <div class="skill-card">
+        <h3 class="skill-title">Programming</h3>
+
+        <div class="space-y-5">
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>Python</span><span>85%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="85%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>Java</span><span>70%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="70%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>C</span><span>75%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="75%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>C++</span><span>75%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="75%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Data -->
+      <div class="skill-card">
+        <h3 class="skill-title">Data & Analytics</h3>
+
+        <div class="space-y-5">
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>SQL</span><span>85%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="85%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>Power BI</span><span>80%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="80%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>Excel</span><span>90%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="90%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Web -->
+      <div class="skill-card">
+        <h3 class="skill-title">Web Development</h3>
+
+        <div class="space-y-5">
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>Django</span><span>75%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="75%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>HTML</span><span>90%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="90%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>CSS</span><span>85%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="85%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-card">
+        <h3 class="skill-title">Tools</h3>
+
+        <div class="space-y-5">
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>Dev C++</span><span>80%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="80%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>VS Code</span><span>90%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="90%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1 text-gray-300">
+              <span>Jupyter Notebook</span><span>85%</span>
+            </div>
+            <div class="bar">
+              <div class="skill-bar" data-width="85%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!--CERTFICATION-->
+<section id="certifications" class="py-24 relative overflow-hidden z-10">
+
+  <!-- Background (CLICK SAFE) -->
+  <div class="absolute inset-0 pointer-events-none z-0
+      bg-[linear-gradient(135deg,#020617,#050a1f,#0a0020)]">
+  </div>
+
+  <!-- 🔧 FIXED GLOW (LESS INTENSE) -->
+  <div class="absolute top-20 left-20 w-72 h-72 bg-purple-600/10 blur-3xl rounded-full pointer-events-none z-0"></div>
+  <div class="absolute bottom-20 right-20 w-72 h-72 bg-fuchsia-500/10 blur-3xl rounded-full pointer-events-none z-0"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-20 max-w-6xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-14 reveal">
+
+      <h2 class="text-4xl font-bold 
+          bg-gradient-to-r from-purple-400 via-fuchsia-400 to-indigo-400 
+          bg-clip-text text-transparent">
+        Certifications
+      </h2>
+
+      <span class="text-sm text-purple-300">
+        Verified learning & achievements
+      </span>
+
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- CARD -->
+      <div class="cert-card relative z-30 reveal">
+        <h3>Data Analytics & Industry Tools</h3>
+        <p class="org">Angaar Batch</p>
+        <span class="year">2025</span>
+        <p class="desc">Hands-on training in SQL, Power BI, and real-world analytics projects.</p>
+
+        <a href="/static/certificates/data-analytics-training.pdf"
+           target="_blank"
+           class="relative z-50 inline-block">
+          View Certificate →
+        </a>
+      </div>
+
+      <!-- CARD -->
+      <div class="cert-card relative z-30 reveal">
+        <h3>ChatGPT Prompt Engineering</h3>
+        <p class="org">Infosys</p>
+        <span class="year">2025</span>
+        <p class="desc">Learned prompt optimization and AI-based problem solving techniques.</p>
+
+        <a href="/static/certificates/chatgpt.pdf"
+           target="_blank"
+           class="relative z-50 inline-block">
+          View Certificate →
+        </a>
+      </div>
+
+      <!-- CARD -->
+      <div class="cert-card relative z-30 reveal">
+        <h3>Java Programming</h3>
+        <p class="org">LPU</p>
+        <span class="year">2025</span>
+        <p class="desc">Strong understanding of OOP concepts and Java development.</p>
+
+        <a href="/static/certificates/java.pdf"
+           target="_blank"
+           class="relative z-50 inline-block">
+          View Certificate →
+        </a>
+      </div>
+
+      <!-- CARD -->
+      <div class="cert-card relative z-30 reveal">
+        <h3>Data Structures & Algorithms</h3>
+        <p class="org">LPU</p>
+        <span class="year">2024</span>
+        <p class="desc">Covered core DSA concepts including trees and recursion.</p>
+
+        <a href="/static/certificates/dsa.pdf"
+           target="_blank"
+           class="relative z-50 inline-block">
+          View Certificate →
+        </a>
+      </div>
+
+      <!-- CARD -->
+      <div class="cert-card relative z-30 reveal">
+        <h3>Computer Networking</h3>
+        <p class="org">Coursera</p>
+        <span class="year">2024</span>
+        <p class="desc">Understanding networking protocols and systems.</p>
+
+        <a href="/static/certificates/networking.pdf"
+           target="_blank"
+           class="relative z-50 inline-block">
+          View Certificate →
+        </a>
+      </div>
+
+      <!-- CARD -->
+      <div class="cert-card relative z-30 reveal">
+        <h3>Oracle Cloud AI Foundations</h3>
+        <p class="org">Oracle</p>
+        <span class="year">2026</span>
+        <p class="desc">Basics of AI, ML, and cloud-based AI services.</p>
+
+        <a href="/static/certificates/oracle_cloud_ai.pdf"
+           target="_blank"
+           class="relative z-50 inline-block">
+          View Certificate →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section> 
+
+<!--EDUCATION-->
+{% load static %}
+
+<section id="education" class="py-24 relative overflow-hidden">
+
+  <!-- 🔥 CLEAN PURPLE BACKGROUND -->
+  <div class="absolute inset-0 
+      bg-[radial-gradient(circle_at_10%_20%,rgba(168,85,247,0.12),transparent_45%),
+          radial-gradient(circle_at_90%_80%,rgba(232,121,249,0.08),transparent_45%),
+          linear-gradient(135deg,#040012,#07001a,#0b0026)]">
+  </div>
+
+  <!-- 🌙 SOFT LIGHT (SUBTLE) -->
+  <div class="absolute top-24 left-10 w-64 h-64 bg-purple-500/5 blur-2xl rounded-full"></div>
+  <div class="absolute bottom-20 right-16 w-64 h-64 bg-purple-400/5 blur-2xl rounded-full"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6">
+
+    <!-- Heading -->
+    <h2 class="text-4xl font-bold mb-16 
+               bg-gradient-to-r from-purple-300 via-fuchsia-400 to-purple-400 
+               bg-clip-text text-transparent reveal-left">
+        Education
+    </h2>
+
+    <!-- Timeline -->
+    <div class="relative border-l border-purple-500/10 pl-8 space-y-10">
+
+      <!-- ITEM -->
+      <div class="edu-card reveal-card group relative">
+
+        <!-- Dot -->
+        <div class="absolute -left-[30px] top-2 w-3 h-3 rounded-full 
+                    bg-purple-400 
+                    shadow-[0_0_6px_rgba(168,85,247,0.4)]"></div>
+
+        <h3 class="text-xl font-semibold text-white group-hover:text-purple-300 transition">
+          B.Tech – Computer Science & Engineering
+        </h3>
+
+        <p class="text-purple-400 text-sm">
+          Lovely Professional University, Phagwara
+        </p>
+
+        <p class="text-gray-400 text-sm mt-1">
+          Aug 2024 – Present
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="edu-card reveal-card group relative">
+
+        <div class="absolute -left-[30px] top-2 w-3 h-3 rounded-full 
+                    bg-purple-400 
+                    shadow-[0_0_6px_rgba(168,85,247,0.4)]"></div>
+
+        <h3 class="text-xl font-semibold text-white group-hover:text-purple-300 transition">
+          Diploma – Computer Science
+        </h3>
+
+        <p class="text-purple-400 text-sm">
+          Techno India University, Kolkata
+        </p>
+
+        <p class="text-gray-400 text-sm mt-1">
+          Nov 2021 – May 2024 • 64%
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="edu-card reveal-card group relative">
+
+        <div class="absolute -left-[30px] top-2 w-3 h-3 rounded-full 
+                    bg-purple-400 
+                    shadow-[0_0_6px_rgba(168,85,247,0.4)]"></div>
+
+        <h3 class="text-xl font-semibold text-white group-hover:text-purple-300 transition">
+          Matriculation (10th)
+        </h3>
+
+        <p class="text-purple-400 text-sm">
+          K.V School, Kolkata
+        </p>
+
+        <p class="text-gray-400 text-sm mt-1">
+          Mar 2020 – Aug 2021 • 63%
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!--CONTACT-->
+<section id="contact" class="py-24 relative overflow-hidden">
+
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 pointer-events-none
+      bg-[linear-gradient(135deg,#020617,#06001a,#0b0026)]"></div>
+
+  <!-- SOFT GLOW -->
+  <div class="absolute top-10 left-10 w-60 h-60 bg-purple-500/5 blur-3xl rounded-full pointer-events-none"></div>
+  <div class="absolute bottom-10 right-10 w-60 h-60 bg-purple-500/5 blur-3xl rounded-full pointer-events-none"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <div class="flex items-center justify-between mb-14 reveal">
+      <h2 class="text-4xl font-bold neon-heading no-glow">
+        Contact
+      </h2>
+
+      <span class="text-sm text-purple-300">
+        Let’s work together
+      </span>
+    </div>
+
+    <!-- CARD -->
+    <div class="p-8 rounded-2xl border border-purple-500/20 bg-[#06001a] shadow-lg reveal">
+
+      <p class="text-gray-300 text-sm leading-relaxed mb-8">
+        I’m open to internships, freelance work, and collaborations in data analytics and software development.
+        If you have an opportunity or idea, feel free to reach out.
+      </p>
+
+      <!-- ✅ WORKING FORM -->
+      <form method="POST" class="grid gap-5">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Your Name" required
+          class="bg-transparent border border-purple-500/20 rounded-lg p-3 text-white focus:border-purple-400 outline-none">
+
+        <input type="email" name="email" placeholder="Your Email" required
+          class="bg-transparent border border-purple-500/20 rounded-lg p-3 text-white focus:border-purple-400 outline-none">
+
+        <textarea name="message" rows="4" placeholder="Your Message" required
+          class="resize-none bg-transparent border border-purple-500/20 rounded-lg p-3 text-white focus:border-purple-400 outline-none"></textarea>
+
+        <button type="submit"
+          class="w-full py-3 rounded-lg text-white font-medium
+                 bg-gradient-to-r from-purple-500 to-fuchsia-400
+                 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/40 transition">
+          Send Message
+        </button>
+
+      </form>
+
+      <!-- SOCIAL -->
+      <div class="flex gap-4 mt-8">
+
+        <a href="mailto:lalmohit167@gmail.com"
+          class="social-icon border border-purple-500/20 hover:border-purple-400">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://github.com/lalmohit167" target="_blank"
+          class="social-icon border border-purple-500/20 hover:border-purple-400">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/mohit167" target="_blank"
+          class="social-icon border border-purple-500/20 hover:border-purple-400">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!--SUCCESS POPUP -->
+<div id="successPopup"
+     class="fixed inset-0 hidden z-50">
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+  <!-- CENTER BOX WRAPPER (IMPORTANT) -->
+  <div class="absolute inset-0 flex items-center justify-center">
+
+    <!-- POPUP BOX -->
+    <div id="popupBox"
+         class="bg-[#0b0026] border border-purple-500/30 
+                rounded-2xl p-8 text-center w-[90%] max-w-sm
+                scale-75 opacity-0 transition-all duration-300">
+
+      <!-- ICON -->
+      <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center 
+                  rounded-full bg-purple-500/20 text-purple-400 text-2xl">
+        ✔
+      </div>
+
+      <!-- TEXT -->
+      <h3 class="text-xl font-semibold text-white mb-2">
+        Message Sent!
+      </h3>
+
+      <p class="text-gray-400 text-sm mb-6">
+        I’ll get back to you soon
+      </p>
+
+      <!-- BUTTON -->
+      <button onclick="closePopup()"
+              class="px-6 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 transition">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+{% if request.GET.success %}
+<script>
+  window.onload = function() {
+    openPopup();
+  }
+</script>
+{% endif %}
+
+<script>
+
+// ================= REVEAL ANIMATION =================
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+
+// ================= NAVBAR + ACTIVE LINK =================
+const navbar = document.getElementById("navbar");
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+  // Navbar glass effect
+  if (window.scrollY > 50) {
+    navbar?.classList.add(
+      "bg-gray-900/70",
+      "backdrop-blur-2xl",
+      "shadow-lg",
+      "border-b",
+      "border-white/10"
+    );
+  } else {
+    navbar?.classList.remove(
+      "bg-gray-900/70",
+      "shadow-lg",
+      "border-b",
+      "border-white/10"
+    );
+  }
+
+  // Active section highlight
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+
+});
+
+
+// ================= MODAL (SAFE) =================
+function openModal(title, desc, image, link) {
+  const modal = document.getElementById("projectModal");
+  if (!modal) return;
+
+  modal.classList.remove("hidden");
+
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalDesc").innerText = desc;
+  document.getElementById("modalImage").src = image;
+  document.getElementById("modalLink").href = link;
+
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  const modal = document.getElementById("projectModal");
+  if (!modal) return;
+
+  modal.classList.add("hidden");
+  document.body.style.overflow = "auto";
+}
+
+const modalEl = document.getElementById("projectModal");
+if (modalEl) {
+  modalEl.addEventListener("click", function(e) {
+    if (e.target.id === "projectModal") {
+      closeModal();
+    }
+  });
+}
+
+
+// ================= CERT CARD HOVER =================
+const cards = document.querySelectorAll(".cert-card");
+
+if (cards.length) {
+  cards.forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.style.setProperty("--x", x + "px");
+      card.style.setProperty("--y", y + "px");
+    });
+  });
+}
+
+
+// ================= SKILL BAR ANIMATION =================
+document.addEventListener("DOMContentLoaded", () => {
+  const bars = document.querySelectorAll(".skill-bar");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        bar.style.width = bar.getAttribute("data-width");
+      }
+    });
+  }, { threshold: 0.4 });
+
+  bars.forEach(bar => observer.observe(bar));
+});
+
+
+// ================= TYPING EFFECT =================
+const roles = ["Data Analyst", "SQL Developer", "Python Enthusiast"];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const typingElement = document.getElementById("typing");
+  if (!typingElement) return;
+
+  const currentRole = roles[roleIndex];
+
+  if (!isDeleting) {
+    typingElement.innerHTML = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentRole.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
+    }
+  } else {
+    typingElement.innerHTML = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 40 : 90);
+}
+
+typeEffect();
+
+</script>
+
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e) {
+
+  const name = form.querySelector("input[name='name']").value.trim();
+  const email = form.querySelector("input[name='email']").value.trim();
+  const message = form.querySelector("textarea[name='message']").value.trim();
+
+  // validation
+  if (!name || !email || !message) {
+    e.preventDefault(); // sirf invalid pe block karega
+    alert("Please fill all fields ⚠️");
+    return;
+  }
+
+  if (!email.includes("@")) {
+    e.preventDefault();
+    alert("Enter valid email ❌");
+    return;
+  }
+
+  // ✅ valid → form submit hone de (Django handle karega)
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const bars = document.querySelectorAll(".skill-bar");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        bar.style.width = bar.getAttribute("data-width");
+      }
+    });
+  }, { threshold: 0.4 });
+
+  bars.forEach(bar => observer.observe(bar));
+});
+</script>
+
+//reveal
+<script>
+const elements = document.querySelectorAll(
+  ".reveal, .reveal-left, .reveal-right, .reveal-card"
+);
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  elements.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+<script>
+function openPopup() {
+  const popup = document.getElementById("successPopup");
+  const box = document.getElementById("popupBox");
+
+  popup.classList.remove("hidden");
+
+  setTimeout(() => {
+    box.classList.remove("scale-75", "opacity-0");
+    box.classList.add("scale-100", "opacity-100");
+  }, 50);
+}
+
+function closePopup() {
+  const popup = document.getElementById("successPopup");
+  const box = document.getElementById("popupBox");
+
+  box.classList.add("scale-75", "opacity-0");
+
+  setTimeout(() => {
+    popup.classList.add("hidden");
+  }, 300);
+}
+</script>
+
+</body>
