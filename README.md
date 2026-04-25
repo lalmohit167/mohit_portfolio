@@ -47,13 +47,6 @@ An AI-based system to track symptoms and generate insights using NLP techniques.
 
 ## Setup Instructions
 
-Clone the repository:
-
-```bash
-git clone https://github.com/lalmohit167/mohit_portfolio.git
-cd mohit_portfolio
-```
-
 Create virtual environment:
 
 ```bash
